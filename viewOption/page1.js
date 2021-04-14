@@ -3,15 +3,29 @@ import { Text, View,
   ImageBackground, ScrollView } from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import {LinearGradient} from 'expo-linear-gradient';
+import { Video, AVPlaybackStatus } from 'expo-av';
 
 export default function App() {
 
   const banner = { uri: "https://www.html.am/templates/downloads/bryantsmith/anoceanofsky/anoceanofsky.jpg" };
   const bg = { uri: "https://www.html.am/templates/downloads/bryantsmith/anoceanofsky/background.png"}
+  
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
+  
   return (
     <View style={styles.container}>
-        <ImageBackground source={bg}
-          style={styles.bg}>
+    
+      {/* <View style={styles.buttons}>
+        <Button
+          title={status.isPlaying ? 'Pause' : 'Play'}
+          onPress={() =>
+            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+          }
+        />
+      </View> */}
+   
+        <ImageBackground source={bg} style={styles.bg}>
       <View style={styles.nav}>
         {/* Nav bar */}
         <ScrollView 
@@ -27,11 +41,25 @@ export default function App() {
 
       <View style={styles.bannerBorder}>
         {/* Banner image */}
-        <ImageBackground source={banner}
-          style={styles.bannerBg}>
+
+        {/* <ImageBackground source={banner}
+          style={styles.bannerBg}> */}
         <Text style={styles.bannerHead}>An Ocean of Sky</Text>
         <Text style={styles.bannerSubHead}>An XHTML 1.0 Strict Template by Bryant Smith</Text>
-        </ImageBackground>
+        
+        <Video
+        ref={video}
+        style={styles.video}
+        source={{
+          uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+        }}
+        useNativeControls
+        resizeMode="contain"
+        isLooping
+        onPlaybackStatusUpdate={status => setStatus(() => status)}
+      />
+        
+        {/* </ImageBackground> */}
       </View>
 
       <View style={styles.bodyBorder}>
@@ -58,6 +86,19 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     // justifyContent: 'center', 
   },
+
+  video: {
+    alignSelf: 'center',
+    width: '300@s',
+    // height: 200,
+  },
+//   buttons: {
+//     flexDirection: 'row',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+
+
   bg:{
     width: '100%',
     flex: 1,
@@ -77,12 +118,12 @@ const styles = ScaledSheet.create({
     borderWidth: '4@s',
     borderColor: '#fff'
   },
-  bannerBg: {
-    width: '100%',
-    height: '150@s',
-    resizeMode: "stretch",
-    padding: 20,
-  },
+//   bannerBg: {
+//     width: '100%',
+//     height: '250@s',
+//     resizeMode: "stretch",
+//     padding: 20,
+//   },
   bannerHead:{
     fontFamily: 'Georgia',
     fontSize: '25@mvs',
