@@ -15,18 +15,10 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-    
-      {/* <View style={styles.buttons}>
-        <Button
-          title={status.isPlaying ? 'Pause' : 'Play'}
-          onPress={() =>
-            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
-          }
-        />
-      </View> */}
-   
-        <ImageBackground source={bg} style={styles.bg}>
-      <View style={styles.nav}>
+      <View style={styles.page}>
+      <LinearGradient colors={['#1A3A7E', '#194D5C']} style={styles.bg}>
+        <View style={styles.nav}>
+        <LinearGradient colors={['#223DA2', '#9DC7F9']} style={styles.navBg}>
         {/* Nav bar */}
         <ScrollView 
             horizontal={true}
@@ -37,15 +29,16 @@ export default function App() {
                 <Text style={styles.navText}>Services</Text>
                 <Text style={styles.navText}>Contact</Text>
         </ScrollView>
+        </LinearGradient>
       </View>
 
       <View style={styles.bannerBorder}>
         {/* Banner image */}
 
         {/* <ImageBackground source={banner}
-          style={styles.bannerBg}> */}
+          style={styles.bannerBg}>
         <Text style={styles.bannerHead}>An Ocean of Sky</Text>
-        <Text style={styles.bannerSubHead}>An XHTML 1.0 Strict Template by Bryant Smith</Text>
+        <Text style={styles.bannerSubHead}>An XHTML 1.0 Strict Template by Bryant Smith</Text> */}
         
         <Video
         ref={video}
@@ -64,17 +57,28 @@ export default function App() {
 
       <View style={styles.bodyBorder}>
         {/* Body */}
+        {/* <ImageBackground source={bg} style={styles.bg}> */}
         <LinearGradient colors={['#E3EDFC', '#fff']} style={styles.bodyBg}>
         <ScrollView style={styles.content}>
           <Text style={styles.head}>The Title of an Article</Text>
               <Text style={styles.bodyText}>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer. This template validates XHTML Strict 1.0, CSS Validates as well; enjoy</Text>
               <Text style={styles.bodyText}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</Text>
               <Text style={styles.bodyText}>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</Text>
+          <Text style={styles.head}>So Many Titles, So Little Time.</Text>
+              <Text style={styles.bodyText}>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer. This template validates XHTML Strict 1.0, CSS Validates as well; enjoy</Text>
+              <Text style={styles.bodyText}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</Text>
+              <Text style={styles.bodyText}>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</Text>
+          <Text style={styles.head}>Yet Another One!</Text>
+              <Text style={styles.bodyText}>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer. This template validates XHTML Strict 1.0, CSS Validates as well; enjoy</Text>
+              <Text style={styles.bodyText}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</Text>
+              <Text style={styles.bodyText}>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</Text>
 
         </ScrollView>
         </LinearGradient>
+        {/* </ImageBackground> */}
+        </View>
+      </LinearGradient>
       </View>
-      </ImageBackground>
     </View>
   );
 }
@@ -86,38 +90,55 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     // justifyContent: 'center', 
   },
+  page:{
+    flex: 1,
+    borderColor:'#000',
+    borderWidth: 3
+  },
 
+  bg:{
+    width: '100%',
+
+    flex: 1,
+    resizeMode: 'stretch',
+   
+    
+  },
+  navBg:{
+    padding: 20,
+    height: 200,
+    borderBottomWidth: '4@s',
+    borderBottomColor: '#fff'
+  
+  },
+  nav: {
+    flex: 0.1,
+     
+  },
+  navText: {
+    fontFamily: 'Georgia',
+    fontSize: '20@mvs0.3',
+    marginHorizontal: '25@mvs',
+    color: '#CDE2FC',
+    paddingTop: 40
+  },
+  bannerBorder:{
+    width: '80%',
+    borderWidth: '4@s',
+    borderColor: '#fff',
+    alignSelf: 'center',
+    marginTop: '-15@s'
+  },
   video: {
     alignSelf: 'center',
-    width: '300@s',
-    // height: 200,
+    width: '100%',
+    
   },
 //   buttons: {
 //     flexDirection: 'row',
 //     justifyContent: 'center',
 //     alignItems: 'center',
 //   },
-
-
-  bg:{
-    width: '100%',
-    flex: 1,
-    resizeMode: 'cover'
-  },
-  nav: {
-    flex: 0.1,
-    marginTop: 50, 
-  },
-  navText: {
-    fontFamily: 'Georgia',
-    fontSize: '20@mvs0.3',
-    marginHorizontal: '25@mvs',
-    color: '#CDE2FC'
-  },
-  bannerBorder:{
-    borderWidth: '4@s',
-    borderColor: '#fff'
-  },
 //   bannerBg: {
 //     width: '100%',
 //     height: '250@s',
@@ -142,6 +163,8 @@ const styles = ScaledSheet.create({
   
   bodyBorder:{
     flex: 1,
+    width: '80%',
+    alignSelf: 'center',
     borderWidth: '4@s',
     marginTop: '15@mvs',
     marginBottom: 10,
@@ -150,7 +173,7 @@ const styles = ScaledSheet.create({
   },
 
   content:{
-    width: '320@s',
+    width: '100%',
     padding: 15,
     marginBottom: 10
   },
