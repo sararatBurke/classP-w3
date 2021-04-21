@@ -171,7 +171,7 @@ const styles = ScaledSheet.create({
   },
   nav: {
     flex: 0.1,
-    width: "110%",
+    width: "100%",
       
   },
   nav2: {
@@ -210,9 +210,7 @@ const styles = ScaledSheet.create({
   links: {
     color: "white",
     fontWeight: "bold",
-    marginRight: "25@s",
-    marginLeft: "15@s",
-    
+    marginHorizontal: "16@s",
     fontFamily: 'Georgia',
     fontSize: '13@mvs0.3',
   },
@@ -244,6 +242,13 @@ const styles = ScaledSheet.create({
     height: "100%",
     justifyContent: "center",
   },
+  button: {
+    borderRadius: 5,
+    padding: 10,
+    elevation: 2,
+    marginBottom:20,
+    alignItems: 'center'
+  },
   buttonClose: {
     backgroundColor: "#2196F3",
   },
@@ -252,13 +257,7 @@ const styles = ScaledSheet.create({
     fontWeight: "bold",
     textAlign: "center"
   },
-  button: {
-    borderRadius: 5,
-    padding: 10,
-    elevation: 2,
-    marginBottom:20,
-  },
-
+  
   centeredView: {
     flexDirection: "column",
     flex: 1,
