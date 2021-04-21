@@ -57,7 +57,6 @@ export default function App() {
 
       <View style={styles.bodyBorder}>
         {/* Body */}
-        {/* <ImageBackground source={bg} style={styles.bg}> */}
         <LinearGradient colors={['#E3EDFC', '#fff']} style={styles.bodyBg}>
         <ScrollView style={styles.content}>
           <Text style={styles.head}>The Title of an Article</Text>
@@ -75,7 +74,6 @@ export default function App() {
 
         </ScrollView>
         </LinearGradient>
-        {/* </ImageBackground> */}
         </View>
       </LinearGradient>
       </View>
